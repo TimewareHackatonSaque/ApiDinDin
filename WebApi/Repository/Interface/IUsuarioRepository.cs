@@ -7,6 +7,8 @@ namespace WebApi.Repository.Interface
         
         Task<Usuario> AddUsuario(Usuario usuario);
 
-        Task<Usuario> GetUsuarioById(int id);
+        Task<IEnumerable<Usuario>> GetCotacoesByIdUsuario(int idUsuario); // Busca as cotacoes pelo id do Usuario
+
+        Task<Usuario> GetUsuarioById(int idUsuario);
     }
 }

@@ -22,7 +22,23 @@ namespace WebApi.Repository
 
         public async Task<Usuario> GetUsuarioById(int id)
         {
-            return await _contexto.Usuarios.FirstOrDefaultAsync(e => e.id == id);
+            return await _contexto.Usuarios.FirstOrDefaultAsync(e => e.idUsuario == id);
+        }
+
+
+
+        public async Task<IEnumerable<Usuario>> GetCotacoesByIdUsuario(int idUsuario)
+        {
+            var usuario = await _contexto.Usuarios.FindAsync(idUsuario);
+
+            if (usuario == null)
+            {
+                return Enumerable.Empty<Cotacoes>(); // Retorna uma lista vazia se o Usuario não existir
+            }
+
+            return await _contexto.Cotacoes
+                .Where(e => e.idUsuario == idUsuario)
+                .ToListAsync();
         }
     }
 }

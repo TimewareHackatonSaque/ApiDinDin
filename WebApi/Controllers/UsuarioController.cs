@@ -44,7 +44,7 @@ namespace WebApi.Controllers
 
                 var result = await _usuarioRepository.AddUsuario(usuario);
 
-                return CreatedAtAction(nameof(getUsuario), new { id = result.id }, result);
+                return CreatedAtAction(nameof(getUsuario), new { id = result.idUsuario }, result);
             }
             catch (Exception)
             {

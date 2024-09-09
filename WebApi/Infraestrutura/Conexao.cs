@@ -7,9 +7,12 @@ namespace WebApi.Infraestrutura
     {
         public Conexao(DbContextOptions<Conexao> options) : base(options)
         {
+
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
+
+        public DbSet<Cotacoes> Cotacoes { get; set; }
 
         /*
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

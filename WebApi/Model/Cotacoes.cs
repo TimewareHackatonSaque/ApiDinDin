@@ -9,11 +9,11 @@ namespace WebApi.Model
     public class Cotacoes
     {
         [Key]
-        public int idCotacoes { get; set; }
+        public int idCotacao { get; set; }
         public double valor { get; set; }
         public  Parcelas parcelas { get; set; }
 
-
+        public int idUsuario { get; set; }
 
     }
 }

@@ -15,7 +15,9 @@ namespace WebApi.Model
         public string cpf { get;  set; }
         public string senha { get;  set; }
 
-        public int idCotacoes { get; set; }
+        //public List<Cotacoes> Cotacoes { get; set;}
+        
+        //public int idCotacoes { get; set; }
 
         /*
         public Usuario(string nome, string telefone, string email, string cpf, string senha) {
