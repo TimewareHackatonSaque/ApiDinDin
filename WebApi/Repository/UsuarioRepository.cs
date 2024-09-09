@@ -27,18 +27,21 @@ namespace WebApi.Repository
 
 
 
-        public async Task<IEnumerable<Usuario>> GetCotacoesByIdUsuario(int idUsuario)
+        public async Task<IEnumerable<Cotacoes>> GetCotacoesByIdUsuario(int idUsuario)
         {
             var usuario = await _contexto.Usuarios.FindAsync(idUsuario);
 
             if (usuario == null)
             {
-                return Enumerable.Empty<Cotacoes>(); // Retorna uma lista vazia se o Usuario não existir
+                return Enumerable.Empty<Cotacoes>(); // Retorna uma lista vazia se não existir a cotação
             }
 
+            // Caso exista retorna a lista de cotações do usuário
             return await _contexto.Cotacoes
                 .Where(e => e.idUsuario == idUsuario)
                 .ToListAsync();
         }
+
+      
     }
 }

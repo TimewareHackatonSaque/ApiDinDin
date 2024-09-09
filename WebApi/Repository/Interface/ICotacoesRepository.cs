@@ -6,12 +6,12 @@ namespace WebApi.Repository.Interface
     public interface ICotacoesRepository
     {
 
-        Task<IEnumerable<Cotacoes>> GetContacoes();
+        Task<IEnumerable<Cotacoes>> GetCotacoes();
 
         Task<Cotacoes>AddCotacoes(Cotacoes cotacoes);
 
 
-        Task<Cotacoes> GetContacao(int IdCotacao);
+        Task<Cotacoes> GetCotacao(int IdCotacao);
     }
 
     

@@ -32,14 +32,5 @@ namespace WebApi.Repository
             return result.Entity;
         }
 
-        public Task<IEnumerable<Cotacoes>> GetContacoes()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Cotacoes> GetContacao(int IdCotacao)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

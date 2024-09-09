@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using WebApi.Model;
 using WebApi.Repository.Interface;
 
 namespace WebApi.Controllers
 {
-    public class CotacoesController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CotacoesController : ControllerBase
     {
         private readonly ICotacoesRepository _cotacoesRepository;
 
@@ -18,7 +21,7 @@ namespace WebApi.Controllers
         {
             try
             {
-                return Ok(await _cotacoesRepository.GetContacoes());
+                return Ok(await _cotacoesRepository.GetCotacoes());
             }
             catch (Exception)
             {
@@ -43,6 +46,5 @@ namespace WebApi.Controllers
             }
         }
 
-        
     }
 }
